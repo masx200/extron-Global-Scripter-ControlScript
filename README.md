@@ -34,3 +34,7 @@ touchpanels. ControlScript also allows programmers to leverage the power and fle
 the Python 3 language to create robust AV control systems.
 
 ControlScript® is the Extron programming language used to develop control programs on IP Link Pro control processors. It is based on Python 3.5, an object-oriented, general purpose, interpreted, programming language. ControlScript is part of the firmware that is loaded to the IP Link Pro control processors. This documentation covers the libraries, conventions, and other details that make up ControlScript.
+
+# 使用说明
+
+下载 pdf 和 mht 文件后,用浏览器打开
