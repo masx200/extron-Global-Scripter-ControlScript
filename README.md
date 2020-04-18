@@ -37,4 +37,4 @@ ControlScript® is the Extron programming language used to develop control progr
 
 # 使用说明
 
-下载 pdf 和 mht 文件后,用浏览器打开
+下载 pdf 和 mht 文件后,用电脑chrome浏览器打开
