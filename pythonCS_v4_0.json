@@ -1,0 +1,293 @@
+
+
+{
+	"about": {
+        "prefix": "about",
+        "body": "about",
+        "description": "Easy fix.",
+		"ExtronLibraray version": "3.1r5",
+		"ControlScript version": "3.1.8",
+		"GlobalScripter version": "2.1.0.116",
+		"Released": "13.11.2018",
+		"Disclaimer": "THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+        "ChangeLog": ["3.0 - Updated to ControlScript 2.9.25 with FW 3.00.0000-b022",
+					  "3.1 - fixed typo and updated about snippet to fool VSCode. Thanks to Richard Herman for catching this.",
+					  "4.0 - Updated to ExtronLibrary 3.1r5 with FW 3.01.0000-b010"]
+    },
+	"eBUS Device": {
+		"prefix": "eBUSDevice",
+		"body": [
+			"${1:eBUSHolder} = eBUSDevice(${2:Host}, '${3:DeviceAlias}')\n"
+		],
+		"description": "Defines common interface to Extron eBUS panels."
+	},
+	"Processor": {
+		"prefix": "ProcessorDevice",
+		"body": [
+			"${1:ProcessorHolder} = ProcessorDevice('${2:DeviceAlias}'${3:, '${4:PartNumber}'})\n"
+		],
+		"description": "Defines common interface to Extron Control Processors."
+	},
+	"User Interface": {
+		"prefix": "UIDevice",
+		"body": [
+			"${1:UIHostHolder} = UIDevice('${2:PanelAlias}'${3:, '${4:PartNumber}'})\n"
+		],
+		"description": "Instantiation of UI Device."
+	},
+	"Generic Event": {
+		"prefix": "Event",
+		"body": [
+			"@event(${1:AttachedObject}, 'Event')",
+			"def ${2:EventHandlerName}(${3:ReturnedObject}, ${4:Data}):",
+			"\t${5:pass}\n"
+		],
+		"description": "Definition of Generic event handler."
+	},
+	"Held Event": {
+		"prefix": "Held",
+		"body": [
+			"@event(${1:AttachedButtonObject}, 'Held')",
+			"def ${2:HeldEventHanderName}(${3:ReturnedButtonObject}, ${4:ReturnedState}):",
+			"\t${5:pass}\n"
+		],
+		"description": "Definition of Held event handler."
+	},
+	"Pressed Event": {
+		"prefix": "Pressed",
+		"body": [
+			"@event(${1:AttachedButtonObject}, 'Pressed')",
+			"def ${2:PressedEventHanderName}(${3:ReturnedButtonObject}, ${4:ReturnedState}):",
+			"\t${5:pass}\n"
+		],
+		"description": "Definition of Pressed event handler."
+	},
+	"Released Event": {
+		"prefix": "Released",
+		"body": [
+			"@event(${1:AttachedButtonObject}, 'Released')",
+			"def ${2:ReleasedEventHanderName}(${3:ReturnedButtonObject}, ${4:ReturnedState}):",
+			"\t${5:pass}\n"
+		],
+		"description": "Definition of Released event handler."
+	},
+	"Repeated Event": {
+		"prefix": "Repeated",
+		"body": [
+			"@event(${1:AttachedButtonObject}, 'Repeated')",
+			"def ${2:RepeatedEventHanderName}(${3:ReturnedButtonObject}, ${4:ReturnedState}):",
+			"\t${5:pass}\n"
+		],
+		"description": "Definition of Repeated event handler."
+	},
+	"Tapped Event": {
+		"prefix": "Tapped",
+		"body": [
+			"@event(${1:AttachedButtonObject}, 'Tapped')",
+			"def ${2:TappedEventHanderName}(${3:ReturnedButtonObject}, ${4:ReturnedState}):",
+			"\t${5:pass}\n"
+		],
+		"description": "Definition of Tapped event handler."
+	},
+	"Turned Event": {
+		"prefix": "Turned",
+		"body": [
+			"@event(${1:AttachedKnob}, 'Turned')",
+			"def ${2:TurnedEventHandlerName}(${3:ReturnedKnobObject}, ${4:ReturnedState}):",
+			"\t${5:pass}\n"
+		],
+		"description": "Definition of Turned event handler."
+	},	
+	"Circuit Breaker Port": {
+		"prefix": "CircuitBreakerInterface",
+		"body": [
+			"${1:CircuitBreakerHolder} = CircuitBreakerInterface(${2:Host}, '${3:CBR1}')\n"
+		],
+		"description": "Instantiation of a Circuit Breaker Interface."
+	},	
+	"Contact Input Port": {
+		"prefix": "ContactInterface",
+		"body": [
+			"${1:ContactPortHolder} = ContactInterface(${2:Host}, '${3:CII1}')\n"
+		],
+		"description": "Instantiation of a Contact Input Port."
+	},
+	"Digital Input Port": {
+		"prefix": "DigitalInputInterface",
+		"body": [
+			"${1:ContactPortHolder} = DigitalInputInterface(${2:Host}, '${3:DII1}'${4:, Pullup='${5|False,True|}'} )\n"
+		],
+		"description": "Instantiation of a Digital Input Port."
+	},
+	"Digital IO Port": {
+		"prefix": "DigitalIOInterface",
+		"body": [
+			"${1:DigitalIOPortHolder} = DigitalIOInterface(${2:Host}, '${3:DIO1}'${4:, Mode='${5|DigitalInput,DigitalOuptut|}'}${6:, Pullup='${7|False,True|}'})\n"
+		],
+		"description": "Instantiation of a Digital IO Port."
+	},
+	"Ethernet Client Port": {
+		"prefix": "EthernetClientInterface",
+		"body": [
+			"${1:EthernetClientHolder} = EthernetClientInterface('${2:IPAddress}', ${3:1024}${4:, Protocol='${5|TCP,UDP,SSH|}'}${6:, ServicePort=${7:O}}${8:, Credentials=('${9:username}', '${10:password}'})\n"
+		],
+		"description": "Instantiation of an Ethernet Client Port."
+	},
+	"Ethernet Server Port": {
+		"prefix": "EthernetServerInterface",
+		"body": [
+			"# Warning: This class will be deprecated in a future release of ControlScript. For any new development, EthernetServerInterfaceEx should be used\n.",
+			"${1:EthernetServer} = EthernetServerInterface(${2:1024}${3:, Protocol='${4|TCP,UDP|}'}${5:, Interface='${6:Any}'}${7:, ServicePort=${8:O}})\n"
+		],
+		"description": "Instantiation of an Ethernet Server Port."
+	},
+	"Ethernet Server Port Ex": {
+		"prefix": "EthernetServerInterfaceEx",
+		"body": [
+			"${1:EthernetServer} = EthernetServerInterfaceEx(${2:1024}${3:, Protocol='${4|TCP,UDP|}'}${5:, Interface='${6:Any}'}${7:, MaxClients=${8|None,1|}})\n"
+		],
+		"description": "Instantiation of an Ethernet Server Port."
+	},
+	"Flex IO Port": {
+		"prefix": "FlexIOInterface",
+		"body": [
+			"${1:FlexIOPortHolder} = FlexIOInterface(${2:Host}, '${3:FIO1}'${4:, Mode='${5|DigitalInput,AnalogInput,DigitalInput|}'}${6:, Pullup='${7|False,True|}'}${8:, Upper=${9:2.8}}${10:, Lower=${11:2.0}})\n"
+		],
+		"description": "Instantiation of a Flex IO Port."
+	},
+	"IR Port": {
+		"prefix": "IRInterface",
+		"body": [
+			"${1:IRPortHolder} = IRInterface(${2:Host}, '${3:IRS1}', '${4:IrFileName.eir}')\n"
+		],
+		"description": "Instantiation of a IR Port."
+	},
+	"PoE Port": {
+		"prefix": "PoEInterface",
+		"body": [
+			"${1:PoEPortHolder} = PoEInterface(${2:Host}, '${3:POE1}')\n" 
+		],
+		"description": "Instantiation of a PoE Port."
+	},
+	"Relay Port": {
+		"prefix": "RelayInterface",
+		"body": [
+			"${1:RelayPortHolder} = RelayInterface(${2:Host}, '${3:RLY1}')\n"
+		],
+		"description": "Instantiation of a Relay Port."
+	},
+	"Serial Port": {
+		"prefix": "SerialInterface",
+		"body": [
+			"${1:SerialPortHolder} = SerialInterface(${2:Host}, '${3:COM1}', ${4:Baud=${5:9600}}${6:, Data=${7:8}}${8:, Parity='${9|None,Odd,Even|}'}${10:, Stop=${11:1}}${12:, Parity='${13|Off,HW,SW|}'}${14:, CharDelay=${15:0}}${16:, Mode='${17|RS232,RS422,RS485|}'})\n"
+		],
+		"description": "Instantiation of a Serial Port."
+	},	
+	"SWA Receptacle Port": {
+		"prefix": "SWACReceptacleInterface",
+		"body": [
+			"${1:SWACReceptaclePortHolder} = SWACReceptacleInterface(${2:Host}, '${3:SAC1}')\n"
+		],
+		"description": "Instantiation of a SWA Receptacle Port."
+	},
+	"Switched Power Port": {
+		"prefix": "SWPowerInterface",
+		"body": [
+			"${1:SWPowerPortHolder} = SWPowerInterface(${2:Host}, '${3:SPI1}')\n"
+		],
+		"description": "Instantiation of a Switched Power Port."
+	},
+	"Volume Control Port": {
+		"prefix": "VolumeInterface",
+		"body": [
+			"${1:VolumePortHolder} = VolumeInterface(${2:Host}, '${3:VOL1}')\n"
+		],
+		"description": "Instantiation of a Volume Control Port."
+	},
+	"Clock": {
+		"prefix": "Clock",
+		"body": [
+			"${1:ClockHolder} = Clock(['${2:HH}:${3:MM}:${4:SS}']${5:, Days=${6|None,[EnterListOfDaysForAlarm]|}}${7:, Function=${8|None,EnterNameOfFuncionToExecute|}})"
+		],
+		"description": "Instantiation of the Clock."
+	},
+	"Email": {
+		"prefix": "Email",
+		"body": [
+			"${1:EmailHolder} = Email(${2:smtpServer=${3|None,EnterIPOrHostnameOfServer|}}${4:, port=${5|None,EnterPortNumber|}}${6:, username=${7|None,'EnterUsername'|}}${8:, password=${9|None,'EnterPassword'|}}${10:, sslEnabled=${11|None,False,True|}})"
+		],
+		"description": "Instantiation of the Email client."
+	},
+	"File": {
+		"prefix": "File",
+		"body": [
+			"${1:FileHoler} = File('${2:EnterNameOfFileToOpen}'${3:, mode='${4|r,w,a|}'}${5:, encoding=${6|None,'EnterCustomEncoding'|}}${7:, newline=${8|None,'EnterNewlineCommand'|}})"
+		],
+		"description": "Instantiation of a File object."
+	},
+	"RFile": {
+		"prefix": "RFile",
+		"body": [
+			"${1:RFileHoler} = RFile('${2:EnterNameOfFileToOpen}'${3:, mode='${4|r,w,a|}'}${5:, encoding=${6|None,'EnterCustomEncoding'|}}${7:, newline=${8|None,'EnterNewlineCommand'|}})"
+		],
+		"description": "Instantiation of a RFile object."
+	},
+	"MESet": {
+		"prefix": "MESet",
+		"body": [
+			"${1:MESetHolder} = MESet([${2:EnterObjects}])"
+		],
+		"description": "Instantiation of a MESet object."
+    },
+    "Timer": {
+        "prefix": "Timer",
+        "body": [
+            "${1:TimerHolder} = Timer(${2:0.0}, ${3:Function=${4|None, 'EnterNameOfFunctionToExecute'|}})"
+        ],
+        "description": "Instantiation of a Timer object."
+    },
+	"Wait Classic": {
+		"prefix": "Wait",
+		"body": [
+			"${1:WaitHolder} = Wait(${2:0.0}${3:, Function=${4|None,'EnterNameOfFuncionToExecute'|}})"
+		],
+		"description": "Instantiation of a Wait object."
+	},
+	"Wait Decorator": {
+		"prefix": "WaitDecorator",
+		"body": [
+			"@Wait(${1:0.0})",
+			"def ${2:WaitHandlerName}():",
+			"\t${5:pass}\n"
+		],
+		"description": "Instantiation of a Wait object."
+	},
+	"Button": {
+		"prefix": "Button",
+		"body": [
+			"${1:ButtonObjectHolder} = Button(${2:UIHost}, ${3|EnterIDOfButton,'EnterNameOfButton'|})\n"
+		],
+		"description": "Instantiation of a Button."
+	},
+	"Knob": {
+		"prefix": "Knob",
+		"body": [
+			"${1:KnobObjectHolder} = Knob(${2:UIHost}, ${3:61001})\t# TLP Pro 320 uses ID 65501\n"
+		],
+		"description": "Instantiation of a Knob."
+	},
+	"Label": {
+		"prefix": "Label",
+		"body": [
+			"${1:LabelObjectHolder} = Label(${2:UIHost}, ${3:1})\n"
+		],
+		"description": "Instantiation of a Label."
+	},
+	"Level": {
+		"prefix": "Level",
+		"body": [
+			"${1:LevelObjectHolder} = Level(${2:UIHost}, ${3:1})\n"
+		],
+		"description": "Instantiation of a Level."
+	}
+}
