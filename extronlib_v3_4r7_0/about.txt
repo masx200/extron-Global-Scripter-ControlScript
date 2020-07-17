@@ -1,0 +1,68 @@
+About:
+
+
+1. Custom code snippets
+The first thing is custom code snippets. The base was taken from GS, so the names
+and form are the same. They work like normal snippets, one starts writing the name
+of the constructor and VSCode inserts the snippet (either with tab or mouse click).
+The TAB key is then used to move between the customisable names and options.
+
+2. Dummy extronlib
+The second thing is a "dummy" extronlib. This "dummy" extronlib assures that you
+will no longer have errors when importing stuff from the extronlib. Inside are all
+the current classes (with their methods and properties) and functions. All classes,
+methods and functions have "parameter info" texts which describes what a component
+is for (it is basically a copied text from the CS library reference). As the word
+"dummy" implies it is not a full fledged extronlib, so don't expect to simulate it
+on your PC (methods mostly contain only "pass" statements). But it gives you the
+possibility to use intellisense on extronlib objects, so you will not have to look
+at the manual for the casing of each method or properts. As it is a "library" it
+can be used also in other IDE's, but I only tried it in VSCode.
+
+3. Usage
+
+    3.1 Snippets
+    To use this the contents of the attached pythonCS.json file must be copied to
+    the VSCode's custom python snippets json file:
+    File > Preferences > User Snippets, when asked for which language type "python".
+    VSCode will open it's "python.json" for python user snippets. Copy the contents
+    from pythonCS.json file, and save. Now you can use the snippets.
+
+    Recommended: To use/update the libray delete the suffix _v4 in the name of the
+        json file. Cs vile should be named pythonCS.
+
+    Note:If the editor is giving you trouble with the .json snippets delete the
+    "about' snippet so the snippet "eBUS Devices" is the first on the list.
+
+    3.2 extronlib
+    To use this "dummy" extronlib you have to unzip the attached extronlib.zip
+    file in the folder Lib in your python installation folder.
+
+    Important: To use/update the libray delete the suffix _v4 in the name of the
+        extracted folder. Lib folder name should be extronlib.
+
+4. Possible locations of the libraries
+Jason put together the possible locations of the python installation folders:
+    
+    Just to help anyone out, and my future self (so I don't have to keep looking for it everytime).
+
+    The Python \Lib folder is normally found: ( on Win10)
+    c:\Users\<username>\AppData\Local\Programs\Python\Python36-32\Lib\
+
+    your <username> will be unique. And I'm assuming if you are on a different
+    version of Python, the last part might be slightly different as well.
+
+    FYI, I also found a duplicate location that was listed as:
+    "c:\User\<username>\AppData\Roaming\Python\Python36\site-packages".
+
+    I just replaced the files in both to be safe. Not sure what the difference is.
+    Note: The number 36 in Jason's post refers to the version of the Python interpreter
+    that is installed on your computer. This means the folders on your computers might
+    be named differently (e.g. 35-32, 35-64, 37-64 etc.)
+
+5. Known issues
+Descriptions don't look good anymore in Visual Studio Code (like in the gifs below).
+Looks like MS changed something in the handling of the descriptions formatting.
+In my VSCode even the built in python descriptions look like mine. Will look into it.
+
+
